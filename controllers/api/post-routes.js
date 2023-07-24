@@ -66,7 +66,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', withAuth, (req, res) => {
-  Post.update(
+  Post.create(
     {
       title: req.body.title,
       content: req.body.content,
