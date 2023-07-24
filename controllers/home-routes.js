@@ -1,4 +1,4 @@
-const { error } = require('console');
+// const { error } = require('console');
 const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 const router = require('express').Router();
