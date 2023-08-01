@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Post, User, Comment } = require('../../models');
 const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
-const { userInfo } = require('os');
+// const { userInfo } = require('os');
 
 router.get('/', (req, res) => {
   console.log('============');

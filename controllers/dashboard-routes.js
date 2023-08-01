@@ -4,6 +4,7 @@ const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
+  console.log('here is user id: ', req.session.user_id);
   Post.findAll({
     where: {
       user_id: req.session.user_id,
@@ -26,6 +27,7 @@ router.get('/', withAuth, (req, res) => {
   })
     .then((dbPostData) => {
       const posts = dbPostData.map((post) => post.get({ plain: true }));
+      console.log('here is posts: ', posts);
       res.render('dashboard', { posts, loggedIn: true });
     })
     .catch((err) => {
